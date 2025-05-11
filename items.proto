@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+service ItemService {
+  // Unary RPC
+  rpc GetItemById(ItemRequest) returns (ItemResponse);
+  
+  // Server-streaming
+  rpc ListAllItems(Empty) returns (stream ItemResponse);
+  
+  // Client-streaming
+  rpc AddItems(stream ItemRequest) returns (ItemsAddedResult);
+  // Bidirectional
+  rpc ChatAboutItems(stream ChatMessage) returns (stream ChatMessage);
+}
+
+message ItemRequest {
+  int32 id = 1;
+  string name = 2;
+}
+
+message ItemResponse {
+  int32 id = 1;
+  string name = 2;
+}
+
+message Empty {}
+
+message ItemsAddedResult {
+  int32 count = 1;
+}
+
+message ChatMessage {
+  string content = 1;
+}
