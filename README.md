@@ -28,14 +28,21 @@ docker run -d -p 50051:50051 items-grpc:1.0
 
 # -----------REST testing
 #!/bin/bash
+
 #Configuration
+
 ENDPOINT="http://localhost:5000/items/1"
+
 TOTAL_REQUESTS=100
+
 echo "Testing REST API with curl..."
+
 START_TIME=$(date +%s.%N)
+
 for ((i=1; i<=TOTAL_REQUESTS; i++)); do     curl -s -o /dev/null "$ENDPOINT"  # Silent mode, discard output
      echo -n "."  # Progress indicator
 done
+
 END_TIME=$(date +%s.%N)
 #Calculate
 TOTAL_TIME=$(echo "$END_TIME - $START_TIME" | bc)
