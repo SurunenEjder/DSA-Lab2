@@ -1,5 +1,5 @@
 # Docker
-'''
+```
 sudo docker build
 docker --version                                # to check version
 
@@ -15,7 +15,7 @@ docker build -t items-grpc:1.0 -fDockerFile_2 . # Building an image from specifi
 
 docker run -p 50051:50051 -d items-grpc:1.0     # Running that image
 
-'''
+```
 
 # ----------curl
 curl http://localhost:5000/items                                                                   # to check the list of items
