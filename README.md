@@ -1,4 +1,5 @@
-# ----------Docker
+# Docker
+'''
 sudo docker build
 docker --version                                # to check version
 
@@ -13,6 +14,8 @@ docker stop                                     # To kill the container
 docker build -t items-grpc:1.0 -fDockerFile_2 . # Building an image from specific docker file
 
 docker run -p 50051:50051 -d items-grpc:1.0     # Running that image
+
+'''
 
 # ----------curl
 curl http://localhost:5000/items                                                                   # to check the list of items
